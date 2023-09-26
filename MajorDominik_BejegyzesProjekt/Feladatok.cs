@@ -19,6 +19,7 @@ namespace MajorDominik_BejegyzesProjekt
             lista2 = new List<Bejegyzes>();
             Bekeres();
             Beolvasas();
+            VeletlenLikeok();
         }
 
         public void Bekeres()
@@ -26,7 +27,7 @@ namespace MajorDominik_BejegyzesProjekt
             Console.WriteLine("Adjon meg egy darabszámot: ");
             int darabSzam = int.Parse(Console.ReadLine());
             int bejegyzesekSzama = darabSzam;
-            for (int i = 0; i < darabSzam; i++)
+            while (darabSzam>0)
             {
                 if (darabSzam < 0)
                 {
@@ -40,6 +41,7 @@ namespace MajorDominik_BejegyzesProjekt
                     lista1.Add(b);
                 }
             }
+            
             Console.WriteLine("Bejegyzések létrehozva.");
         }
 
@@ -52,28 +54,37 @@ namespace MajorDominik_BejegyzesProjekt
                 string szerzo = adatok[0];
                 string tartalom = adatok[1];
                 Bejegyzes b = new Bejegyzes(szerzo, tartalom);
-                lista2.Add(b);
+                lista1.Add(b);
             }
             sr.Close();
 
-            foreach (var item in lista2)
-            {
-                Console.WriteLine("\n");
-                Console.WriteLine(item);
-            }
+           
             foreach (var item in lista1)
             {
                 Console.WriteLine(item);
             }
         }
 
-        public void VeletlenLikeok(Bejegyzes b)
+        public void VeletlenLikeok()
         {
             int likeSzama = lista1.Count() * 20;
             Random random= new Random();
             foreach (var item in lista1)
             {
-                b.Likeok = random.Next(1, likeSzama + 1);
+                item.Likeok = random.Next(1, likeSzama + 1);
+                item.Like();
+            }
+        }
+
+        public void LegnepszerubbBejegyzes()
+        {
+            Bejegyzes legnepszerubb = lista1[0];
+            foreach (var item in lista1)
+            {
+                if (item.Likeok > legnepszerubb.Likeok)
+                {
+                    legnepszerubb = item;
+                }
             }
         }
     }
