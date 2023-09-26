@@ -17,6 +17,7 @@ namespace MajorDominik_BejegyzesProjekt
             lista1 = new List<Bejegyzes>();
             lista2 = new List<Bejegyzes>();
             Bekeres();
+            Beolvasas();
         }
 
         public void Bekeres()
