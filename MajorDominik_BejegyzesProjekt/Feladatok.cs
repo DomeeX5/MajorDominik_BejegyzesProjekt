@@ -53,6 +53,13 @@ namespace MajorDominik_BejegyzesProjekt
                 Bejegyzes b = new Bejegyzes(szerzo, tartalom);
                 lista1.Add(b);
             }
+            sr.Close();
+        }
+
+        public void VeletlenLikeok(Bejegyzes b)
+        {
+            int likeSzama = lista1.Count()*20;
+            b.Like();
         }
     }
 }
