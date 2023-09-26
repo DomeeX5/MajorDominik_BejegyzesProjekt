@@ -10,6 +10,8 @@ namespace MajorDominik_BejegyzesProjekt
     {
         static void Main(string[] args)
         {
+
+            Console.ReadLine();
         }
     }
 }
