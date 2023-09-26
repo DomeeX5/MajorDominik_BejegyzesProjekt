@@ -35,7 +35,7 @@ namespace MajorDominik_BejegyzesProjekt
 
         public override string ToString()
         {
-            return $"{this.szerzo} {this.likeok} {this.letrejott}\nSzerkesztve: {this.szerkesztve}\n{tartalom}";
+            return $"{this.szerzo} Like-ok: {this.likeok} Létrejött: {this.letrejott}\nSzerkesztve: {this.szerkesztve}\n{tartalom}";
         }
     }
 }
