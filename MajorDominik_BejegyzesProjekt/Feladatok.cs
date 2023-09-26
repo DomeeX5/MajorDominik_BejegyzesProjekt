@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -51,15 +52,29 @@ namespace MajorDominik_BejegyzesProjekt
                 string szerzo = adatok[0];
                 string tartalom = adatok[1];
                 Bejegyzes b = new Bejegyzes(szerzo, tartalom);
-                lista1.Add(b);
+                lista2.Add(b);
             }
             sr.Close();
+
+            foreach (var item in lista2)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine(item);
+            }
+            foreach (var item in lista1)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         public void VeletlenLikeok(Bejegyzes b)
         {
-            int likeSzama = lista1.Count()*20;
-            b.Like();
+            int likeSzama = lista1.Count() * 20;
+            Random random= new Random();
+            foreach (var item in lista1)
+            {
+                b.Likeok = random.Next(1, likeSzama + 1);
+            }
         }
     }
 }

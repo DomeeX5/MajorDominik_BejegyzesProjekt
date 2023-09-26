@@ -18,13 +18,12 @@ namespace MajorDominik_BejegyzesProjekt
         {
             this.szerzo = szerzo;
             this.tartalom = tartalom;
-            likeok = 0;
             szerkesztve = DateTime.Now;
         }
 
         public string Szerzo { get => szerzo; }
         public string Tartalom { get => tartalom; set => szerkesztve = DateTime.Now; }
-        public int Likeok { get => likeok; }
+        public int Likeok { get => likeok; set => likeok = value; }
         public DateTime Letrejott { get => letrejott; }
         public DateTime Szerkesztve { get => szerkesztve; }
 
