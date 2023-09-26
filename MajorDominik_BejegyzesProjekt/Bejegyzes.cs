@@ -10,7 +10,7 @@ namespace MajorDominik_BejegyzesProjekt
     {
         private string szerzo;
         private string tartalom;
-        private int like;
+        private int likeok;
         private DateTime letrejott;
         private DateTime szerkesztve;
 
@@ -18,14 +18,19 @@ namespace MajorDominik_BejegyzesProjekt
         {
             this.szerzo = szerzo;
             this.tartalom = tartalom;
-            like = 0;
+            likeok = 0;
             szerkesztve = DateTime.Now;
         }
 
         public string Szerzo { get => szerzo; }
         public string Tartalom { get => tartalom; set => szerkesztve = DateTime.Now; }
-        public int Like { get => like; }
+        public int Likeok { get => likeok; }
         public DateTime Letrejott { get => letrejott; }
         public DateTime Szerkesztve { get => szerkesztve; }
+
+        public void Like()
+        {
+            likeok++;
+        }
     }
 }
